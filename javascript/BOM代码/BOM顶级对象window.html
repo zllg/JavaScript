@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var body = window.document.querySelector('body')
+        var num = 10;//全局变量
+        console.log(num);
+        console.log(window.num);
+        function fn() {
+            console.log(11);
+        }
+        fn();
+        window.fn();
+        //alert(22);
+        //window.alert(22)
+        //console.dir(window);
+        var name = 10;//最好不用这种写法
+        console.log(window.name);
+        
+    </script>
+</body>
+</html>

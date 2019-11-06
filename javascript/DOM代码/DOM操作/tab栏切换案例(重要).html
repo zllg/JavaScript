@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tab_list {
+            position: relative;
+            background-color: #f7f7f7;
+            border: 1px solid #eee;
+            border-bottom: 1px solid #e4393c;
+            display: block;
+            margin-top: -11px;
+        }
+
+        .tab_list li {
+            position: relative;
+            display: inline-block;
+            display: inline;
+            zoom: 1;
+            font-family: "microsoft yahei";
+            cursor: pointer;
+            padding: 16px 20px;
+            font-size: 14px;
+        }
+
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+
+        .item_info {
+            padding: 20px 0 0 20px;
+        }
+
+        .item {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <!--current当前的-->
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价(50000+)模块内容
+            </div>
+            <div class="item">
+                手机社区模块
+            </div>
+        </div>
+    </div>
+    <script>
+        //1. 获取元素
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        var items = document.querySelectorAll('.item')
+        //for循环绑定点击事件
+        for (var i = 0; i < lis.length; i++) {
+            // 开始给5个li 设置索引号
+            lis[i].setAttribute('index', i);
+
+            lis[i].onclick = function (params) {
+                //干掉所有人  其余的li清除 class这个类
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                //留下自己
+                this.className = 'current';
+
+                //2.下面的显示内容模块
+                var index = this.getAttribute('index');
+                //console.log(index);
+                //干掉所有人， 让其余的item 这些div隐藏
+                for(var i =0;i < items.length;i++){
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+</html>

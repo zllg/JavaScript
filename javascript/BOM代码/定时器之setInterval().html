@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. setInterval
+        //语法规范： window.setInterval(调用函数，延时时间);
+        setInterval(function (params) {
+            console.log('继续输出');
+
+        }, 1000);//每隔一秒钟输出这句话
+        //定时器一旦开始 一直调用 不停歇
+
+        //区别
+        //2. setTimeout  延迟事件到了，就去调用这个回调函数，只调用一次 就结束了了这个定时器
+        //3.setInterval 每隔这个延时时间，就去调用这个回调函数，会调用很多次，重复调用这个函数
+        //4.  一个相当于定时炸弹 爆炸了就没有了  setInterval就是一直开着一直去调用
+        //5.一直播放图片就会用到setInterval   还有秒杀倒计时
+
+    </script>
+</body>
+
+</html>

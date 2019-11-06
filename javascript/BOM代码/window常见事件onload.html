@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /* //把js代码写在了 html前面 用 window.onload 让浏览器加载好后再运行
+         //等着页面加载完毕，才会执行里面代码
+         window.onload = function () {
+             var btn = document.querySelector('button');
+             btn.addEventListener('click', function (params) {
+                 alert('点击我');
+             })
+         }
+         //比如在写一个window.onload  执行后就只能打印22
+         window.onload = function (params) {
+             alert(22);
+         }
+         */
+
+        //如果用addEventListener就不会问题  两个都可以执行 不会覆盖 冲突
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击我');
+            })
+        })
+        window.addEventListener('load', function () {
+                alert('2222');
+            })
+
+            document.addEventListener('DOMcontentLoaded',function (params) {
+                
+            })
+
+            document.addEventListener('DOMContentLoaded',function (params) {
+               alert(33); 
+            })
+            //先弹出的 DOMContentLoaded这个
+            //load等页面内容全部加载完毕，包含页面dom元素  图片 flash css 等等
+            //加载速度比load快一些
+    </script>
+</head>
+
+<body>
+
+    <button>点击</button>
+</body>
+
+</html>

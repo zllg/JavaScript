@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;/*边框外没有空白*/
+            padding: 0;/*边框内部带内容之间填充*/
+            border: none;/*没有边框*/
+            outline: none;/*outline：轮廓  一般会有outline-color*/
+        }
+        a {
+            text-decoration: none;/*a标签去掉下划线*/
+        }
+
+        li {
+            list-style-type: none;/*li标签去掉圆点*/
+        }
+
+        .nav {
+            display: flex;/*Flex是Flexible Box 灵活的盒子  用在这里的意思是 将对象作为弹性伸缩盒显示*/ 
+        }
+
+        .two {
+            overflow: hidden;/*清除浮动*/
+
+        }
+
+        .two li {
+            overflow: hidden;/*float：left 会让元素脱离文档流。如果一个元素（先称其为父元素），他的子元素都设置成float：left了，同时父元素没有设置高度。这时会造成父元素的高度为0.（如果有一个子元素没有设置float，会把父元素给撑起来）。
+
+             overflow：hidden。会消除所有的子元素的浮动，然后进行自适应高度计算，因为父元素没有设定高度，所以不会进行裁剪
+            为使 overflow 有效果，块级容器必须有一个指定的高度（height或者max-height）或者将white-space设置为nowrap
+            */
+            height: 0;
+            width: 0;
+            margin-top: 20px;
+
+        }
+
+        .first:hover li {/*选择鼠标指针浮动在其上的元素，并设置其样式：*/
+            height: 20px;
+            width: 100%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="first">
+            <a href="#">微博</a>
+            <ul class="two">
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+            </ul>
+        </li>
+
+        <li class="first">
+            <a href="#">微博</a>
+            <ul class="two">
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+            </ul>
+        </li>
+
+        <li class="first">
+            <a href="#">微博</a>
+            <ul class="two">
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+            </ul>
+        </li>
+
+        <li class="first">
+            <a href="#">微博</a>
+            <ul class="two">
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        //1. 获取元素
+
+
+    </script>
+</body>
+
+</html>

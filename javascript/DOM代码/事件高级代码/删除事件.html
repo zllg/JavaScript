@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>一</div>
+    <div>二</div>
+    <div>三</div>
+    <script>
+        var divs = document.querySelectorAll('div')
+        divs[0].onclick = function(params) {
+            alert(11);
+            //1. 传统方式删除事件
+            divs[0].onclick = null;
+        }
+
+        //2. removeEventListener 删除事件
+        /*divs[1].addEventListener('click',function (params) {
+            alert(22);
+        })
+        */
+        //还可以写成 
+        //里面的fn 不需要调用加小括号
+        divs[1].addEventListener('click',fn)
+        function fn(params) {
+            alert(22);
+            divs[1].removeEventListener('click',fn);
+        }
+
+        //3. IE8支持  我们现在基本用不到了
+        divs[2].attachEVent('onclick',fn1)
+        function fn1(params) {
+            alert(33)
+            divs[2].datachEvent('onclick,fn1')
+        }
+    </script>
+</body>
+</html>

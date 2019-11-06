@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        //1. setTimeout
+        //语法规范：  window.setTimeout(调用函数，拖延时间);
+        //1. window在调用的时候可以省略
+        //2. 延迟时间是毫秒 但是可以省略，如果省略默认是0
+        //3. 可以调用可以直接写函数  还可以  函数名 还有一种方法'函数名()'
+        //4. 页面有很富哦定时器，我们经常给定时器加标识符 （名字）
+        setTimeout(function () {
+           console.log('时间到了');
+            
+        },8000);
+
+        //第二种方法 调用函数名
+        function calkback() {
+            console.log('爆炸了');
+            
+        }
+        setTimeout(calkback,5000);
+                */
+        //第三种写法
+
+        function calkback() {
+            console.log('爆炸了');
+
+        }
+        //setTimeout('calkback()', 3000);//不提倡这种写法
+        //比如有多个定时器  就起名字来区别
+        var time1 = setTimeout(calkback, 3000);
+        var time2 = setTimeout(calkback, 5000);
+    </script>
+</body>
+
+</html>

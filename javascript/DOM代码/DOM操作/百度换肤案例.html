@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(F:/桌面/图片网站/timg.jpg) no-repeat center top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .baidu {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+
+        .baidu li {
+            float: left;
+            margin: 0 1 px;
+            cursor: pointer;
+        }
+
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="F:/桌面/图片网站/timg.jpg" alt=""></li>
+        <li><img src="F:/桌面/图片网站/wsh.jpg" alt=""></li>
+        <li><img src="F:/桌面/图片网站/login_logo.png" alt=""></li>
+        <li><img src="F:/桌面/图片网站/zsh.jpg" alt=""></li>
+    </ul>
+    <script>
+        //1. 获取元素
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        //console.log(imgs);
+        //2. 循环注册事件
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function (params) {
+                //this.src 及时我们点击图片的路径 
+                //console.log(this.src);
+                //把this。src 给body就可以
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <button id="ldh">按钮1</button>
+    <button id="zxy">按钮2</button><br>
+    <img src="F:/桌面/图片网站/zsh.jpg" alt="">
+
+    <script>
+        // 修改元素属性  src
+        // 1. 获取元素
+        var ldh = document.getElementById('ldh');
+        var zxy = document.getElementById('zxy');
+        var img = document.querySelector('img');
+        //2. 注册事件  处理程序
+        zxy.onclick = function () {
+            img.src = 'F:/桌面/图片网站/wsh.jpg';
+        }
+        ldh.onclick = function () {
+            img.src = "F:/桌面/图片网站/zsh.jpg";
+        } 
+    </script>
+</body>
+
+</html>

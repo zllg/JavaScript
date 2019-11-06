@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="F:\桌面\图片网站\zsh.jpg" alt="">
+    <div>上午好</div>
+    <script>
+        
+
+        //1. 根据系统不同时间来判断，所以需要用到日期内置对象
+        //2. 利用多分支语句来设置不同的图片
+        //3. 需要一个图片，并且根据时间修改图片，就需要用到操作元素src属性
+        //4. 需要有个div元素，显示不同问候语，修改元素内容即可
+        //1.获取元素
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        //2. 得到当前的小时数
+        var date = new Date();
+        var h = date.getHours();
+        //3. 判断小时数改变图片和文字信息
+        if (h < 12) {
+            img.src = 'F:/桌面/图片网站/zsh.jpg';
+            div.innerHTML = '上午好，好好写代码';
+        } else if (h < 18) {
+            img.src = 'F:/桌面/图片网站/timg.jpg';
+            div.innerHTML = '下午好，好好写代码';
+        } else {
+            img.src = 'F:/桌面/图片网站/wsh.jpg';
+            div.innerHTML = '晚上好，好好写代码';
+        }
+        </script>
+</body>
+
+</html>

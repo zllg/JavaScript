@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hour {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #2f3430;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+            right: 0px;
+        }
+
+        .minute {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #2f3430;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .second {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #2f3430;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+        }
+        #fu:after{
+            content: ":";
+            margin-left: -111px;
+        }
+        #hao:after{
+            content: ":";
+            margin-left: 41px;            
+        }
+    </style>
+</head>
+
+<body>
+    <span class="hour">1</span>
+    <span id="fu"></span>
+    <span id="hao"></span>
+    <span class="minute">2</span>
+    <span class="second">3</span>
+    <script>
+        //1. 获取元素
+        var hour = document.querySelector('.hour');//小时的黑色盒子
+        var minute = document.querySelector('.minute');//分钟
+        var second = document.querySelector('.second');//秒数
+        var inputTime = +new Date('2019-10-16 21:30:00');//返回的是用户输入时间总的毫秒数
+        countDown();//我们先调用一次这个函数，防止第一次刷新页面有空白
+        //2. 开启定时器
+        setInterval(countDown, 1000)
+
+        //function countDown(time) { //这里不需要传time
+        function countDown() {
+            var nowTime = +new Date();//返回的是当前时间总的毫秒数
+            var times = (inputTime - nowTime) / 1000;//times是剩余时间总的秒数
+            //var d = parseInt(times / 60 / 60 /24);//天
+            //d = d < 10 ? '0' +d : d;
+            var h = parseInt(times / 60 / 60 % 24);//时
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h; //把剩余的小时给 小时黑色盒子
+
+            var m = parseInt(times / 60 % 60); //分
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+
+            var s = parseInt(times % 60); //当前的秒
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+
+            //return d + '天' + h + '时' + m +'分' +s + '秒';返回值 
+        }
+    </script>
+</body>
+
+</html>

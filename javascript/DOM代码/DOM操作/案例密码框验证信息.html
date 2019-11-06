@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(F:/桌面/icon/gantanhao.png)no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .wrong {
+            color: red;
+            background-image: url(F:/桌面/icon/error.png);
+        }
+
+        .right {
+
+            color: green;
+            background-image: url(F:/桌面/icon/duihao.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <!--register登记-->
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16密码</p>
+        <!--message 消息-->
+    </div>
+    <script>
+        //首先判断的事件是表单失去焦点onblur
+        //如果输入正确提示正确的我信息颜色为绿色小图标变化
+        //如果输入不是6到16位，则提示错误信息颜色为红色 小图标变化
+        //因为里面变换样式较多，我们采用ClassName修改样式
+        //1.获取元素
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        //2. 注册事件  失去焦点
+        ipt.onblur = function (params) {
+            //根据表单里面值的长度  ipt.value.length
+            if (this.value.length < 6 || this.value.length > 16) {
+                //console.log('错误');
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对 要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
+    </script>
+</body>
+
+</html>

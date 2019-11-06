@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        /*window.onresize = function (params) {
+            
+        }
+        window.addEventListener('resize',function (params) {
+            
+        });*/
+        var div = document.querySelector('div')
+        window.addEventListener('resize',function () {
+            console.log(window.innerWidth);
+            console.log('变化了');
+            if (window.innerWidth <= 800) { //小于等于800盒子就隐藏
+                div.style.display = 'none';
+            }else{
+                div.style.display = 'block';
+            }
+        })
+        //以前没有css3的时候就是这样做，响应式布局
+        /*
+        //如果要把js  code 放在head或者结构上面  
+        window.addEventListener('load',function () {
+            //把代码放在这里面就可以了
+        })
+        */
+    </script>
+</body>
+</html>
