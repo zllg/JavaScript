@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+        <li>多个里面筛选多个</li>
+    </ol>
+    <script>
+        $(function(){
+            $("ul li:first").css('color','red');
+            $("ul li:last").css('color','blue');
+            $("ul li:eq(3)").css('color','yellow');
+            $("ol li:odd").css('color',"skyblue")//0起 奇数
+            //$("ol li:even").css('color',"pink")//0起 偶数
+        })
+    </script>
+</body>
+
+</html>

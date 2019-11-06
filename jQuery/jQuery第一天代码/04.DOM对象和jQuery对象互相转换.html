@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <video src="F:/UPUpoo/壁纸/UpupooResource/2000073542/mylivewallpapers.com-Cyberpunk-Anime-Girl.mp4" muted></video>
+    <script>
+        //1. DOM对象转换为jQuery对象
+        //(1)我们直接获取视频，得到就是
+        $('video');
+        //(2)我们已经使用原生js 获取过来 DOM对象
+        var myVideo = document.querySelector('video');
+        //$(myVideo).play();    jquery里面没有play 这个方法 不能这样写
+
+        //2. jquery对象转换为DOM对象
+        //myVideo.play();  //可以播放 谷歌要加muted 静音的意思
+
+        $('video')[0].play()
+        $('video').get[0].play()
+        //两种方式都可以
+    </script>
+</body>
+
+</html>

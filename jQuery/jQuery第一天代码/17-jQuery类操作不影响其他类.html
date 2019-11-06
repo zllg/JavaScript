@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .one{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+        .two{
+            transform: rotate(720deg);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+        //var one = document.querySelector(".one")
+        //one.className = "two";
+
+        //$(".one").addClass("two");// 这个addClass 相当于追加类名 不影响以前的类名
+        $(".one").removeClass("two");
+    </script>
+</body>
+</html>

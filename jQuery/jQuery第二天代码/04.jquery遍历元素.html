@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function () {
+            //$("div").css("color","red");
+            //如果针对于同一类元素做不同操作，需要用到遍历元素(类似for 但是比for强大)
+            var sum = 0;
+            //1. each() 方法遍历元素
+            //指定一个数组
+            var arr = ["red","green","blue"];
+            // $("div").each(function(index,domEle){
+            $("div").each(function (i, domEle) {
+                //回调函数 第一个参数一定是索引号 可以自己指定索引号名称
+                //我们这里把index换成 i
+                //console.log(index);
+                //console.log(i);
+                //回调函数 第二个参数一定是DOM元素对象
+                console.log(domEle);//获取了每一个元素 是dom对象
+                //domEle.css("color"); dom对象没有css方法
+                //$(domEle).css("color", "pink");
+                $(domEle).css("color", arr[i]);
+                //sum+= $(domEle).text();
+                sum += parseInt($(domEle).text());//把拿过来的值 转换成数值型
+            })
+            console.log(sum);//字符形式  连在一起了所有转换成 数值型
+
+
+       //2. $.each() 方法遍历元素 主要用于遍历数据 ， 处理数据
+            //$.each() 主要处理数据的 
+            //$.each($("div"),function(i,ele){
+                // console.log(i);
+                // console.log(ele);
+                
+                
+            //});
+            // $.each(arr,function(i,ele){
+            //     console.log(i);
+            //     console.log(ele);
+                
+                
+            // })
+            $.each({
+                name:"andy",
+                age:18
+            },function(i,ele){
+                console.log(i);//输出name  age 属性名
+                console.log(ele); //输出 andy  18 属性值
+                
+                //$.each  能遍历数组也能遍历对象 如果是数据 (对象啊 数组啊 就$.each)
+                //遍历dom(各种各样标签)  就用each 比较合适  
+            })
+        })
+    </script>
+</body>
+
+</html>

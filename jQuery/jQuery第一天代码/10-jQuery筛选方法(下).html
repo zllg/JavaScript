@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ul 的li</li>
+        <li>我是ul 的li</li>
+        <li>我是ul 的li</li>
+        <li>我是ul 的li</li>
+        <li>我是ul 的li</li>
+        <li>我是ul 的li</li>
+    </ul>
+    <div class="current">我有current</div>
+    <div>俺没有current</div>
+    <script>
+        //注意一下都是方法 带括号
+        //1. 兄弟元素  除了自身元素之外的所有亲兄弟
+        $("ol .item").siblings("li").css("color","red");
+        //2. 第n个元素
+        //(1)我们可以利用选择器的方式选择
+        $("ul li:eq(2)").css("color","red");
+        //(2)我们可以利用选择方法的方式选择   更推荐这种方法 好写变量
+        $("ul li").eq(3).css("color","pink");
+        //3.判断是否有某个类名
+        console.log($("div:first").hasClass("current"));
+        console.log($("div:last").hasClass("current"));
+        
+    </script>
+</body>
+</html>
